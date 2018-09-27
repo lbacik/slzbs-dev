@@ -1,0 +1,20 @@
+
+COMPOSE_PROJECT_NAME=test
+
+DOMAIN=test.local
+
+# address to bind the services to
+HOST_NET_ADDR=127.0.0.1
+
+DOCKER_SOCKET=/var/run/docker.sock
+
+# the path to this repository
+DOCKER_DIR=.
+
+# the path to the project
+PROJECT_DIR=
+
+# public directory inside the project
+PUBLIC_DIR=public
+
+MYSQL_DATA=./var/mysql

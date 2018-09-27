@@ -1,0 +1,5 @@
+.env*
+etc/php/php.ini.local
+etc/mysql/*.conf
+var/*
+!var/.gitkeep
