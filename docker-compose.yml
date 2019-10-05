@@ -53,7 +53,7 @@ services:
     networks:
       net:
         aliases:
-          - www.${DOMAIN}
+          - php.${DOMAIN}
     ports:
       - ${HOST_NET_ADDR}:80:80/tcp
     volumes:
