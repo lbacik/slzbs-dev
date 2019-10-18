@@ -1,7 +1,10 @@
 FROM php:7-cli
 
 RUN apt-get -y update && apt-get -y install \
-	libzip-dev
+	libzip-dev \
+	git \
+	zip \
+	unzip
 
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug \
