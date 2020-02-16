@@ -4,10 +4,6 @@ networks:
   net:
     driver: bridge
 
-#  proxy_net:
-#    external:
-#      name: ${PROXY_NETWORK}
-
 volumes:
   portainer-data:
     driver: local
@@ -66,17 +62,3 @@ services:
       - ${PROJECT_DIR}:/project:cached
       - ./etc/php/php.ini:/usr/local/etc/php/php.ini:ro
     command: -S 0.0.0.0:80 -t ${PUBLIC_DIR}
-
-#  nginx:
-#    build: ./images/nginx
-#    image: ${COMPOSE_PROJECT_NAME}-nginx
-#    container_name: ${COMPOSE_PROJECT_NAME}-nginx
-#    networks:
-#      net:
-#        aliases:
-#          - www.${DOMAIN}
-#      proxy_net:
-#    environment:
-#      VIRTUAL_HOST:
-#        ${DOMAIN},
-#        www.${DOMAIN}
