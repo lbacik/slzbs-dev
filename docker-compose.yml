@@ -61,9 +61,9 @@ services:
         aliases:
           - php.${DOMAIN}
     ports:
-      - ${HOST_NET_ADDR}:80:80/tcp
+      - ${HOST_NET_ADDR}:8080:80/tcp
     volumes:
-      - ${PROJECT_DIR}:/project
+      - ${PROJECT_DIR}:/project:cached
       - ./etc/php/php.ini:/usr/local/etc/php/php.ini:ro
     command: -S 0.0.0.0:80 -t ${PUBLIC_DIR}
 
