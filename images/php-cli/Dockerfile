@@ -2,7 +2,6 @@ FROM php:7-cli
 
 RUN apt-get -y update && apt-get -y install \
 	libzip-dev \
-	git \
 	zip \
 	unzip
 
@@ -14,6 +13,6 @@ RUN pecl install xdebug \
 
 WORKDIR /project
 
-COPY --from=composer /usr/bin/composer /usr/bin/composer
+COPY --from=composer:1.10.15 /usr/bin/composer /usr/bin/composer
 
 EXPOSE 80/tcp
