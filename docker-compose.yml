@@ -25,7 +25,8 @@ services:
       - ${HOST_NET_ADDR}:9000:9000/tcp  
 
   mysql:
-    image: mysql
+    build: ./images/mysql
+    image: ${COMPOSE_PROJECT_NAME}-mysql
     container_name: ${COMPOSE_PROJECT_NAME}-mysql
     networks:
       net:
@@ -37,7 +38,6 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ${MYSQL_DATA}:/var/lib/mysql
-      - ./etc/mysql:/etc/mysql/conf.d
 
   composer:
     image: composer
